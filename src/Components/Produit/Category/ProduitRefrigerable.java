@@ -1,6 +1,8 @@
-package Components;
+package Components.Produit.Category;
 
-public class ProduitRefrigerable extends Produit{
+import Components.Produit.Produit;
+
+public class ProduitRefrigerable extends Produit {
     private double temperatureDeRefrigeration;
 
     public ProduitRefrigerable(String nom, String code, double prix, double poids, double temperatureDeRefrigeration) {

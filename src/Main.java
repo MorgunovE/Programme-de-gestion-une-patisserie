@@ -1,8 +1,8 @@
 import Components.Patisserie.Patisserie;
-import Components.Produit;
-import Components.ProduitEmballable;
-import Components.ProduitPerissable;
-import Components.ProduitRefrigerable;
+import Components.Produit.Produit;
+import Components.Produit.Category.ProduitEmballable;
+import Components.Produit.Category.ProduitPerissable;
+import Components.Produit.Category.ProduitRefrigerable;
 
 public class Main {
     public static void main(String[] args) {

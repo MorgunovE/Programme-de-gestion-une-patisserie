@@ -1,6 +1,6 @@
 package Components.Patisserie;
 
-import Components.Produit;
+import Components.Produit.Produit;
 
 import java.util.ArrayList;
 import java.util.List;

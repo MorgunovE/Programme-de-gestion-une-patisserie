@@ -1,6 +1,8 @@
-package Components;
+package Components.Produit.Category;
 
-public class ProduitPerissable extends Produit{
+import Components.Produit.Produit;
+
+public class ProduitPerissable extends Produit {
     private int dureeDeVie;
 
     public ProduitPerissable(String nom, String code, double prix, double poids, int dureeDeVie) {

@@ -1,4 +1,4 @@
-package Components;
+package Components.Produit;
 
 public class Produit {
     private String nom;

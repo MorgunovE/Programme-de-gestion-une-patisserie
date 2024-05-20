@@ -1,6 +1,8 @@
-package Components;
+package Components.Produit.Category;
 
-public class ProduitEmballable extends Produit{
+import Components.Produit.Produit;
+
+public class ProduitEmballable extends Produit {
     private boolean emballageBiodegradable;
 
     public ProduitEmballable(String nom, String code, double prix, double poids, boolean emballageBiodegradable) {
