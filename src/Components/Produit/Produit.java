@@ -5,6 +5,7 @@ public class Produit {
     private String code;
     private double poids;
     private double prix;
+    private String etiquette;
 
     public Produit(String nom, String code, double prix, double poids) {
         this.prix = prix;
@@ -43,5 +44,13 @@ public class Produit {
 
     public void setPrix(double prix) {
         this.prix = prix;
+    }
+
+    public String getEtiquette() {
+        return etiquette;
+    }
+
+    public void setEtiquette(String etiquette) {
+        this.etiquette = etiquette;
     }
 }
