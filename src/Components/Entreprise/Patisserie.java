@@ -1,4 +1,4 @@
-package Components.Patisserie;
+package Components.Entreprise;
 
 import Components.Produit.Produit;
 

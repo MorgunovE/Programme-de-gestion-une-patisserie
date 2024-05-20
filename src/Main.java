@@ -1,4 +1,4 @@
-import Components.Patisserie.Patisserie;
+import Components.Entreprise.Patisserie;
 import Components.Produit.Category.ProduitLocal;
 import Components.Produit.Produit;
 import Components.Produit.Category.ProduitEmballable;
