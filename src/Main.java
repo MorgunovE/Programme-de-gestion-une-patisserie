@@ -1,3 +1,4 @@
+import Components.Entreprise.EntrepriseEtiquetage;
 import Components.Entreprise.Patisserie;
 import Components.Produit.Category.ProduitLocal;
 import Components.Produit.Produit;
@@ -27,12 +28,12 @@ public class Main {
         patisserie.ajouterProduit(confitDeCanard);
         patisserie.ajouterProduit(confiture);
 
+        EntrepriseEtiquetage entrepriseEtiquetage = new EntrepriseEtiquetage("Patisserie", "www.patisserie-site-web.com", "123 rue de patisserie");
+
         for (Produit produit : patisserie.getProduits()) {
             System.out.println("-------------------------------------------------");
-            System.out.println("Nom du produit : " + produit.getNom());
-            System.out.println("Code du produit : " + produit.getCode());
-            System.out.println("Prix du produit : " + produit.getPrix());
-            System.out.println("Poids du produit : " + produit.getPoids());
+            entrepriseEtiquetage.etiqueterProduit(produit);
+            System.out.println(produit.getEtiquette());
             System.out.println("-------------------------------------------------");
         }
     }
