@@ -27,30 +27,37 @@ public class PainFrais extends Produit implements Emballable, Perissable {
         this.typeEmballage = typeEmballage;
     }
 
+    @Override
     public void emballer() {
         estEmballe = true;
     }
 
+    @Override
     public String estBiodegradableOuRecyclable() {
         return typeEmballage;
     }
 
+    @Override
     public String validerEtatEmballage() {
         return estEmballe ? "Le pain frais est emballé." : "Le pain frais n'est pas emballé.";
     }
 
+    @Override
     public String eliminerProduit() {
         return "Le pain frais a été jeté.";
     }
 
+    @Override
     public String verifierEtat() {
         return validerEtatEmballage();
     }
 
+    @Override
     public int getDureeDeVie() {
         return dureeDeVie;
     }
 
+    @Override
     public String estConsommable() {
         return estConsommable ? "Le pain frais est consommable." : "Le pain frais n'est pas consommable.";
     }

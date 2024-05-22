@@ -32,39 +32,48 @@ public class Gateau extends Produit implements Emballable, Perissable, Refrigera
         this.typeEmballage = typeEmballage;
     }
 
+    @Override
     public  void emballer() {
         estEmballe = true;
     }
 
+    @Override
     public String estBiodegradableOuRecyclable() {
         return typeEmballage;
     }
 
+    @Override
     public String validerEtatEmballage() {
         return estEmballe ? "Le gâteau est emballé." : "Le gâteau n'est pas emballé.";
     }
 
+    @Override
     public String verifierTemperature(double temperatureActuelle) {
         this.temperatureActuelle = temperatureActuelle;
         return temperatureActuelle <= temperatureOptimale ? "Le gâteau est réfrigéré." : "Le gâteau n'est pas réfrigéré.";
     }
 
+    @Override
     public String eliminerProduit() {
         return "Le gâteau a été jeté.";
     }
 
+    @Override
     public String verifierEtat() {
         return validerEtatEmballage() + "\n" + verifierTemperature(temperatureActuelle);
     }
 
+    @Override
     public int getDureeDeVie() {
         return dureeDeVie;
     }
 
+    @Override
     public String estConsommable() {
         return estConsommable ? "Le gâteau est consommable." : "Le gâteau n'est pas consommable.";
     }
 
+    @Override
     public double getTemperatureOptimale() {
         return temperatureOptimale;
     }
