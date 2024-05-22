@@ -8,6 +8,10 @@ import Components.Produit.Produit;
 public class GateauGlace extends Produit implements Emballable, Perissable, Refrigerable {
     private boolean estEmballe;
     private double temperatureActuelle;
+    private int dureeDeVie;
+    private boolean estConsommable;
+    private double temperatureOptimale;
+    private String typeEmballage;
 
     /**
      * Constructeur de la classe Produit.
@@ -16,14 +20,25 @@ public class GateauGlace extends Produit implements Emballable, Perissable, Refr
      * @param code  le code du produit
      * @param prix  le prix du produit
      * @param poids le poids du produit
+     * @param dureeDeVie la durée de vie du produit
+     * @param temperatureOptimale la température optimale de conservation du produit
+     * @param typeEmballage le type d'emballage du produit
      */
-    public GateauGlace(String nom, String code, double prix, double poids) {
+    public GateauGlace(String nom, String code, double prix, double poids, int dureeDeVie, double temperatureOptimale, String typeEmballage) {
         super(nom, code, prix, poids);
+        this.dureeDeVie = dureeDeVie;
+        this.estConsommable = true;
+        this.temperatureOptimale = temperatureOptimale;
+        this.typeEmballage = typeEmballage;
     }
 
 
     public  void emballer() {
         estEmballe = true;
+    }
+
+    public String estBiodegradableOuRecyclable() {
+        return typeEmballage;
     }
 
     public String validerEtatEmballage() {
@@ -32,7 +47,7 @@ public class GateauGlace extends Produit implements Emballable, Perissable, Refr
 
     public String verifierTemperature(double temperatureActuelle) {
         this.temperatureActuelle = temperatureActuelle;
-        return temperatureActuelle <= -18 ? "Le gâteau glace est réfrigéré." : "Le gâteau glace n'est pas réfrigéré.";
+        return temperatureActuelle <= temperatureOptimale ? "Le gâteau glace est réfrigéré." : "Le gâteau glace n'est pas réfrigéré.";
     }
 
     public String eliminerProduit() {
@@ -41,6 +56,18 @@ public class GateauGlace extends Produit implements Emballable, Perissable, Refr
 
     public String verifierEtat() {
         return validerEtatEmballage() + "\n" + verifierTemperature(temperatureActuelle);
+    }
+
+    public int getDureeDeVie() {
+        return dureeDeVie;
+    }
+
+    public String estConsommable() {
+        return estConsommable ? "Le gâteau glace est consommable." : "Le gâteau glace n'est pas consommable.";
+    }
+
+    public double getTemperatureOptimale() {
+        return temperatureOptimale;
     }
 
 }

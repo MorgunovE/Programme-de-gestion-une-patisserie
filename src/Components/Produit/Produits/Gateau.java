@@ -64,6 +64,7 @@ public class Gateau extends Produit implements Emballable, Perissable, Refrigera
     public String estConsommable() {
         return estConsommable ? "Le gâteau est consommable." : "Le gâteau n'est pas consommable.";
     }
+
     public double getTemperatureOptimale() {
         return temperatureOptimale;
     }
