@@ -19,13 +19,12 @@ public class ConfitDeCanard extends Produit implements Locale {
      * @param poids le poids du produit
      * @param dureeConservation la durée de conservation du produit
      * @param dateMiseEnConserve la date de mise en conserve du produit
-     * @param dateFinValidite la date de fin de validité du produit
      */
-    public ConfitDeCanard(String nom, String code, double prix, double poids, int dureeConservation, LocalDate dateMiseEnConserve, LocalDate dateFinValidite) {
+    public ConfitDeCanard(String nom, String code, double prix, double poids, int dureeConservation, LocalDate dateMiseEnConserve) {
         super(nom, code, prix, poids);
         this.dureeConservation = dureeConservation;
         this.dateMiseEnConserve = dateMiseEnConserve;
-        this.dateFinValidite = dateFinValidite;
+        this.dateFinValidite = dateMiseEnConserve.plusDays(dureeConservation);
     }
 
     @Override

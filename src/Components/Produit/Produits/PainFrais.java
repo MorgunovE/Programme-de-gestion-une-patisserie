@@ -4,11 +4,14 @@ import Components.Produit.Category.Emballable;
 import Components.Produit.Category.Perissable;
 import Components.Produit.Produit;
 
+import java.time.LocalDate;
+
 public class PainFrais extends Produit implements Emballable, Perissable {
     private boolean estEmballe;
     private int dureeDeVie;
     private boolean estConsommable;
     private String typeEmballage;
+    private LocalDate dateDePreparation;
 
     /**
      * Constructeur de la classe Produit.
@@ -23,7 +26,8 @@ public class PainFrais extends Produit implements Emballable, Perissable {
     public PainFrais(String nom, String code, double prix, double poids, int dureeDeVie, String typeEmballage) {
         super(nom, code, prix, poids);
         this.dureeDeVie = dureeDeVie;
-        this.estConsommable = true;
+        this.dateDePreparation = LocalDate.now();
+        this.estConsommable = verifierEtat();
         this.typeEmballage = typeEmballage;
     }
 
@@ -48,8 +52,13 @@ public class PainFrais extends Produit implements Emballable, Perissable {
     }
 
     @Override
-    public String verifierEtat() {
-        return validerEtatEmballage();
+    public Boolean verifierEtat() {
+        if(LocalDate.now().isAfter(dateDePreparation.plusDays(dureeDeVie))) {
+            eliminerProduit();
+            estConsommable = false;
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -58,7 +67,13 @@ public class PainFrais extends Produit implements Emballable, Perissable {
     }
 
     @Override
-    public String estConsommable() {
-        return estConsommable ? "Le pain frais est consommable." : "Le pain frais n'est pas consommable.";
+    public Boolean estConsommable() {
+        verifierEtat();
+        return estConsommable;
+    }
+
+    @Override
+    public LocalDate getDateDePreparation() {
+        return dateDePreparation;
     }
 }
