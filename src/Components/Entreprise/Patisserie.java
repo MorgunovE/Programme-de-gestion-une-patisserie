@@ -2,30 +2,35 @@ package Components.Entreprise;
 
 import Components.Produit.Produit;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Classe représentant une pâtisserie.
  * Une pâtisserie est un lieu où sont fabriqués et vendus des produits.
+ * Elle possède une liste de produits et une entreprise d'étiquetage.
  */
 public class Patisserie {
     private List<Produit> produits;
+    private EntrepriseEtiquetage entrepriseEtiquetage;
 
     /**
      * Constructeur de la classe Patisserie.
+     * @param produits la liste des produits de la pâtisserie
+     * @param entrepriseEtiquetage l'entreprise d'étiquetage de la pâtisserie
      */
-    public Patisserie() {
-        this.produits = new ArrayList<>();
+    public Patisserie(List<Produit> produits, EntrepriseEtiquetage entrepriseEtiquetage) {
+        this.produits = produits;
+        this.entrepriseEtiquetage = entrepriseEtiquetage;
+        etiqueterProduits();
     }
 
     /**
-     * Ajoute un produit à la liste des produits de la pâtisserie.
-     *
-     * @param produit le produit à ajouter
+     * This method is responsible for applying labels to all products in the patisserie.
      */
-    public void ajouterProduit(Produit produit) {
-        this.produits.add(produit);
+    private void etiqueterProduits() {
+        for (Produit produit : produits) {
+            entrepriseEtiquetage.etiqueterProduit(produit);
+        }
     }
 
     /**
