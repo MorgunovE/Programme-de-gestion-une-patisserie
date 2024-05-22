@@ -7,6 +7,13 @@ public interface Emballable {
     void emballer();
 
     /**
+     * Retourne si le produit est biodégradable ou recyclable.
+     *
+     * @return vrai si le produit est biodégradable ou recyclable, faux sinon
+     */
+    String estBiodegradableOuRecyclable();
+
+    /**
      * Retourne si le produit est emballé ou non.
      *
      * @return vrai si le produit est emballé, faux sinon
