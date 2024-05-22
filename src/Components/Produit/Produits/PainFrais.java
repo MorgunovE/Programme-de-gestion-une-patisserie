@@ -38,8 +38,8 @@ public class PainFrais extends Produit implements Emballable, Perissable {
     }
 
     @Override
-    public String estBiodegradableOuRecyclable() {
-        return typeEmballage;
+    public Boolean estBiodegradableOuRecyclable() {
+        return typeEmballage.equalsIgnoreCase("carton") || typeEmballage.equalsIgnoreCase("papier") || typeEmballage.equalsIgnoreCase("Recyclable") || typeEmballage.equalsIgnoreCase("Biodegradable");
     }
 
     @Override

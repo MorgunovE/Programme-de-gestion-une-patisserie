@@ -42,8 +42,8 @@ public class GateauGlace extends Produit implements Emballable, Perissable, Refr
     }
 
     @Override
-    public String estBiodegradableOuRecyclable() {
-        return typeEmballage;
+    public Boolean estBiodegradableOuRecyclable() {
+        return typeEmballage.equalsIgnoreCase("carton") || typeEmballage.equalsIgnoreCase("papier") || typeEmballage.equalsIgnoreCase("Recyclable") || typeEmballage.equalsIgnoreCase("Biodegradable");
     }
 
     @Override
