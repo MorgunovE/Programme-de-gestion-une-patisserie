@@ -22,11 +22,12 @@ public class PainFrais extends Produit implements Emballable, Perissable {
      * @param poids le poids du produit
      * @param dureeDeVie la durée de vie du produit
      * @param typeEmballage le type d'emballage du produit
+     * @param dateDePreparation la date de préparation du produit
      */
-    public PainFrais(String nom, String code, double prix, double poids, int dureeDeVie, String typeEmballage) {
+    public PainFrais(String nom, String code, double prix, double poids, int dureeDeVie, String typeEmballage, LocalDate dateDePreparation) {
         super(nom, code, prix, poids);
         this.dureeDeVie = dureeDeVie;
-        this.dateDePreparation = LocalDate.now();
+        this.dateDePreparation = dateDePreparation;
         this.estConsommable = verifierEtat();
         this.typeEmballage = typeEmballage;
     }

@@ -25,11 +25,12 @@ public class GateauGlace extends Produit implements Emballable, Perissable, Refr
      * @param dureeDeVie la durée de vie du produit
      * @param temperatureOptimale la température optimale de conservation du produit
      * @param typeEmballage le type d'emballage du produit
+     * @param dateDePreparation la date de préparation du produit
      */
-    public GateauGlace(String nom, String code, double prix, double poids, int dureeDeVie, double temperatureOptimale, String typeEmballage) {
+    public GateauGlace(String nom, String code, double prix, double poids, int dureeDeVie, double temperatureOptimale, String typeEmballage, LocalDate dateDePreparation) {
         super(nom, code, prix, poids);
         this.dureeDeVie = dureeDeVie;
-        this.dateDePreparation = LocalDate.now();
+        this.dateDePreparation = dateDePreparation;
         this.estConsommable = verifierEtat();
         this.temperatureOptimale = temperatureOptimale;
         this.typeEmballage = typeEmballage;
