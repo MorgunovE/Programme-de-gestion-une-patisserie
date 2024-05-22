@@ -1,0 +1,15 @@
+package Components.Produit.Category;
+
+public interface Emballable {
+    /**
+     * Emballe le produit.
+     */
+    void emballer();
+
+    /**
+     * Retourne si le produit est emballé ou non.
+     *
+     * @return vrai si le produit est emballé, faux sinon
+     */
+    String validerEtatEmballage();
+}

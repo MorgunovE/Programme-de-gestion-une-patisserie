@@ -2,9 +2,9 @@ import Components.Entreprise.EntrepriseEtiquetage;
 import Components.Entreprise.Patisserie;
 import Components.Produit.Category.ProduitLocal;
 import Components.Produit.Produit;
-import Components.Produit.Category.ProduitEmballable;
-import Components.Produit.Category.ProduitPerissable;
-import Components.Produit.Category.ProduitRefrigerable;
+import Components.Produit.Produits.Gateau;
+import Components.Produit.Produits.GateauGlace;
+import Components.Produit.Produits.PainFrais;
 
 import java.time.LocalDate;
 
@@ -12,11 +12,33 @@ public class Main {
     public static void main(String[] args) {
         Patisserie patisserie = new Patisserie();
 
-        ProduitEmballable gateau = new ProduitEmballable("Gateau", "001", 10.0, 0.5, true);
+        Gateau gateau = new Gateau("Gâteau", "001", 10.0, 0.5);
 
-        ProduitPerissable pain = new ProduitPerissable("Pain", "002", 1.0, 0.5, 3);
+        PainFrais pain = new PainFrais("Pain", "002", 2.0, 0.5);
 
-        ProduitRefrigerable gateauGlace = new ProduitRefrigerable("Gateau glace", "003", 15.0, 0.5, -5.0);
+        GateauGlace gateauGlace = new GateauGlace("Gâteau glacé", "003", 15.0, 0.5);
+
+        // Emballage des produits
+        gateau.emballer();
+        gateauGlace.emballer();
+        pain.emballer();
+
+
+        // Vérification de l'état de l'emballage
+        System.out.println(gateau.validerEtatEmballage());
+        System.out.println(gateauGlace.validerEtatEmballage());
+        System.out.println(pain.validerEtatEmballage());
+
+
+        // Vérification de la température pour les produits réfrigérables
+        System.out.println(gateau.verifierTemperature(4.0));
+        System.out.println(gateauGlace.verifierTemperature(-20.0));
+
+        // Vérification de l'état des produits
+        System.out.println(gateau.verifierEtat());
+        System.out.println(gateauGlace.verifierEtat());
+        System.out.println(pain.verifierEtat());
+
 
         ProduitLocal confitDeCanard = new ProduitLocal("Confit de canard", "004", 20.0, 0.5, 365, LocalDate.now());
 
