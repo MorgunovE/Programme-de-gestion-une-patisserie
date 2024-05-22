@@ -6,6 +6,9 @@ import Components.Produit.Produit;
 
 public class PainFrais extends Produit implements Emballable, Perissable {
     private boolean estEmballe;
+    private int dureeDeVie;
+    private boolean estConsommable;
+    private String typeEmballage;
 
     /**
      * Constructeur de la classe Produit.
@@ -14,13 +17,22 @@ public class PainFrais extends Produit implements Emballable, Perissable {
      * @param code  le code du produit
      * @param prix  le prix du produit
      * @param poids le poids du produit
+     * @param dureeDeVie la durée de vie du produit
+     * @param typeEmballage le type d'emballage du produit
      */
-    public PainFrais(String nom, String code, double prix, double poids) {
+    public PainFrais(String nom, String code, double prix, double poids, int dureeDeVie, String typeEmballage) {
         super(nom, code, prix, poids);
+        this.dureeDeVie = dureeDeVie;
+        this.estConsommable = true;
+        this.typeEmballage = typeEmballage;
     }
 
     public void emballer() {
         estEmballe = true;
+    }
+
+    public String estBiodegradableOuRecyclable() {
+        return typeEmballage;
     }
 
     public String validerEtatEmballage() {
@@ -33,5 +45,13 @@ public class PainFrais extends Produit implements Emballable, Perissable {
 
     public String verifierEtat() {
         return validerEtatEmballage();
+    }
+
+    public int getDureeDeVie() {
+        return dureeDeVie;
+    }
+
+    public String estConsommable() {
+        return estConsommable ? "Le pain frais est consommable." : "Le pain frais n'est pas consommable.";
     }
 }
