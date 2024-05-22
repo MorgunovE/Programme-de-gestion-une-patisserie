@@ -40,4 +40,17 @@ public class ProduitRefrigerable extends Produit {
     public void setTemperatureDeRefrigeration(double temperatureDeRefrigeration) {
         this.temperatureDeRefrigeration = temperatureDeRefrigeration;
     }
+
+    /**
+     * Vérifie si le produit est conservé à la bonne température.
+     *
+     * @param temperatureActuelle la température actuelle de conservation du produit
+     * @return une chaîne de caractères indiquant si le produit est conservé à la bonne température ou non
+     */
+    public String verifierTemperature(double temperatureActuelle) {
+        if (temperatureActuelle == temperatureDeRefrigeration) {
+            return "Le produit " + getNom() + " est conservé à la bonne température.";
+        }
+        return "Le produit " + getNom() + " n'est pas conservé à la bonne température. Il devrait être conservé à " + temperatureDeRefrigeration + " degrés.";
+    }
 }
