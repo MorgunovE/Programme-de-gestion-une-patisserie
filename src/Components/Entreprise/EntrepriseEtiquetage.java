@@ -43,7 +43,7 @@ public class EntrepriseEtiquetage {
 
         if (produit instanceof Components.Produit.Category.Refrigerable) {
             Components.Produit.Category.Refrigerable produitRefrigerable = (Components.Produit.Category.Refrigerable) produit;
-            etiquette.append("Température optimale : ").append(produitRefrigerable.getTemperatureOptimale()).append('\n');
+            etiquette.append("Doit être conservé au réfrigérateur à température optimale : ").append(produitRefrigerable.getTemperatureOptimale()).append(" ℃").append('\n');
         }
 
         if (produit instanceof Components.Produit.Category.Emballable) {

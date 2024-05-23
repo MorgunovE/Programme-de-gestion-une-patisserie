@@ -53,8 +53,8 @@ public class Gateau extends Produit implements Emballable, Perissable, Refrigera
     }
 
     @Override
-    public String verifierTemperature(double temperatureActuelle) {
-        return temperatureActuelle <= temperatureOptimale ? "Le gâteau est réfrigéré." : "Le gâteau n'est pas réfrigéré.";
+    public Boolean verifierTemperature(double temperatureActuelle) {
+        return temperatureActuelle <= temperatureOptimale;
     }
 
     @Override

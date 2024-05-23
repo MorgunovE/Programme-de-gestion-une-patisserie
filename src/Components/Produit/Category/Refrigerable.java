@@ -6,7 +6,7 @@ public interface Refrigerable {
      *
      * @return vrai si le produit est réfrigéré, faux sinon
      */
-    String verifierTemperature(double temperatureActuelle);
+    Boolean verifierTemperature(double temperatureActuelle);
 
     /**
      * Retourne la température optimale de conservation du produit.
