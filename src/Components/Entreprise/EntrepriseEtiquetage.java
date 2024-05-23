@@ -48,7 +48,7 @@ public class EntrepriseEtiquetage {
 
         if (produit instanceof Components.Produit.Category.Emballable) {
             Components.Produit.Category.Emballable produitEmballable = (Components.Produit.Category.Emballable) produit;
-            etiquette.append("Type d'emballage : ").append(produitEmballable.estBiodegradableOuRecyclable()).append('\n');
+            etiquette.append("Type d'emballage est biodegradable ou recyclable : ").append(produitEmballable.estBiodegradableOuRecyclable()).append('\n');
         }
 
         if (produit instanceof Components.Produit.Category.Locale) {

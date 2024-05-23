@@ -30,6 +30,7 @@ public class PainFrais extends Produit implements Emballable, Perissable {
         this.dateDePreparation = dateDePreparation;
         this.estConsommable = verifierEtat();
         this.typeEmballage = typeEmballage;
+        this.estEmballe = false;
     }
 
     @Override
@@ -43,8 +44,8 @@ public class PainFrais extends Produit implements Emballable, Perissable {
     }
 
     @Override
-    public String validerEtatEmballage() {
-        return estEmballe ? "Le pain frais est emballé." : "Le pain frais n'est pas emballé.";
+    public Boolean validerEtatEmballage() {
+        return estEmballe;
     }
 
     @Override

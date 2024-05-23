@@ -34,10 +34,11 @@ public class Gateau extends Produit implements Emballable, Perissable, Refrigera
         this.estConsommable = verifierEtat();
         this.temperatureOptimale = temperatureOptimale;
         this.typeEmballage = typeEmballage;
+        this.estEmballe = false;
     }
 
     @Override
-    public  void emballer() {
+    public void emballer() {
         estEmballe = true;
     }
 
@@ -47,8 +48,8 @@ public class Gateau extends Produit implements Emballable, Perissable, Refrigera
     }
 
     @Override
-    public String validerEtatEmballage() {
-        return estEmballe ? "Le gâteau est emballé." : "Le gâteau n'est pas emballé.";
+    public Boolean validerEtatEmballage() {
+        return estEmballe;
     }
 
     @Override

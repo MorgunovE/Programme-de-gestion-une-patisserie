@@ -18,5 +18,5 @@ public interface Emballable {
      *
      * @return vrai si le produit est emballé, faux sinon
      */
-    String validerEtatEmballage();
+    Boolean validerEtatEmballage();
 }
