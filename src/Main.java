@@ -63,6 +63,8 @@ public class Main {
                 System.out.println("-------------------------");
                 System.out.println(produit.getEtiquette());
                 System.out.println("-------------------------");
+            } else if (produit instanceof Perissable && !((Perissable) produit).estConsommable()) {
+                System.out.println(((Perissable) produit).eliminerProduit());
             }
         }
     }

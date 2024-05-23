@@ -50,13 +50,12 @@ public class PainFrais extends Produit implements Emballable, Perissable {
 
     @Override
     public String eliminerProduit() {
-        return "Le pain frais a été jeté.";
+        return getNom() + " avec le code " + getCode() + " a été jeté.";
     }
 
     @Override
     public Boolean verifierEtat() {
         if(LocalDate.now().isAfter(dateDePreparation.plusDays(dureeDeVie))) {
-            eliminerProduit();
             estConsommable = false;
             return false;
         }

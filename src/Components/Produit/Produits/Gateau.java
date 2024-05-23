@@ -59,13 +59,12 @@ public class Gateau extends Produit implements Emballable, Perissable, Refrigera
 
     @Override
     public String eliminerProduit() {
-        return "Le gâteau a été jeté.";
+        return getNom() + " avec le code " + getCode() + " a été jeté.";
     }
 
     @Override
     public Boolean verifierEtat() {
         if(LocalDate.now().isAfter(dateDePreparation.plusDays(dureeDeVie))) {
-            eliminerProduit();
             estConsommable = false;
             return false;
         }
