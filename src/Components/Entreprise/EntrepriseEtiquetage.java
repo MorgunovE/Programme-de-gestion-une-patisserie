@@ -36,23 +36,19 @@ public class EntrepriseEtiquetage {
                 .append("Prix du produit : ").append(produit.getPrix()).append('\n')
                 .append("Poids du produit : ").append(produit.getPoids()).append('\n');
 
-        if (produit instanceof Components.Produit.Category.Perissable) {
-            Components.Produit.Category.Perissable produitPerissable = (Components.Produit.Category.Perissable) produit;
+        if (produit instanceof Components.Produit.Category.Perissable produitPerissable) {
             etiquette.append("Durée de vie : ").append(produitPerissable.getDureeDeVie()).append('\n');
         }
 
-        if (produit instanceof Components.Produit.Category.Refrigerable) {
-            Components.Produit.Category.Refrigerable produitRefrigerable = (Components.Produit.Category.Refrigerable) produit;
+        if (produit instanceof Components.Produit.Category.Refrigerable produitRefrigerable) {
             etiquette.append("Doit être conservé au réfrigérateur à température optimale : ").append(produitRefrigerable.getTemperatureOptimale()).append(" ℃").append('\n');
         }
 
-        if (produit instanceof Components.Produit.Category.Emballable) {
-            Components.Produit.Category.Emballable produitEmballable = (Components.Produit.Category.Emballable) produit;
+        if (produit instanceof Components.Produit.Category.Emballable produitEmballable) {
             etiquette.append("Type d'emballage est biodegradable ou recyclable : ").append(produitEmballable.estBiodegradableOuRecyclable()).append('\n');
         }
 
-        if (produit instanceof Components.Produit.Category.Locale) {
-            Components.Produit.Category.Locale produitLocale = (Components.Produit.Category.Locale) produit;
+        if (produit instanceof Components.Produit.Category.Locale produitLocale) {
             etiquette.append("Durée de conservation : ").append(produitLocale.getDureeConservation()).append('\n')
                     .append("Date de mise en conserve : ").append(produitLocale.getDateMiseEnConserve()).append('\n')
                     .append("Date de fin de validité : ").append(produitLocale.getDateFinValidite()).append('\n');
